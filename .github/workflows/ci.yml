@@ -11,4 +11,4 @@ jobs:
           docker build -t hello .
           docker run -d -p 8000:8000 hello
           chmod u+x test.sh
-          curl -s --retry 10 --retry-delay 1 http://localhost:8000
+          curl -s --retry 10 --retry-delay 1 --retry-all-errors http://localhost:8000
