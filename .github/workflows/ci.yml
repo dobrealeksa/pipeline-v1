@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - run: |
-        docker build -t hello .
-        docker run -d -p 8000:8000 hello
-        chmod u+x test.sh
-        ./test.sh
+          docker build -t hello .
+          docker run -d -p 8000:8000 hello
+          chmod u+x test.sh
+          curl -s --retry 10 --retry-delay 1 http://localhost:8000
